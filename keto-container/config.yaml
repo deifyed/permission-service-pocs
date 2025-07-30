@@ -4,8 +4,7 @@ log:
   level: debug
 
 namespaces:
-  - id: 0
-    name: schemas
+  location: file:///home/ory/namespaces.keto.ts
 
 dsn: memory
 
