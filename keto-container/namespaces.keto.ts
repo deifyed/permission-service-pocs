@@ -10,7 +10,8 @@ export class Organization implements Namespace {
   }
 
   permits = {
-    isMember: (ctx: Context): boolean => [...this.related.admins, ...this.related.members].includes(ctx.subject)
+    isMember: (ctx: Context): boolean => this.related.admins.includes(ctx.subject) ||
+      this.related.members.includes(ctx.subject)
   }
 }
 
@@ -32,7 +33,7 @@ export class Schema implements Namespace {
   permits = {
     view: (ctx: Context): boolean =>
       this.related.viewers.includes(ctx.subject) ||
-      this.related.owners.traverse((o) => o.permits.isMember(ctx.subject)),
+      this.related.owners.traverse((o) => o.permits.isMember(ctx)),
     edit: (ctx: Context): boolean =>
       this.related.editors.includes(ctx.subject) ||
       this.related.owners.traverse((o) => o.related.admins.includes(ctx.subject)),
