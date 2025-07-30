@@ -4,5 +4,11 @@
     "object": "ooo",
     "relation": "members",
     "subject_id": "julius"
+  },
+  {
+    "namespace": "Organization",
+    "object": "ooo",
+    "relation": "admins",
+    "subject_id": "sjefen"
   }
 ]
