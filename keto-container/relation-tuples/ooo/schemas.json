@@ -1,0 +1,12 @@
+[
+  {
+    "namespace": "Schema",
+    "object": "50",
+    "relation": "owners",
+    "subject_set": {
+      "namespace": "Organization",
+      "object": "ooo",
+      "relation": "..."
+    }
+  }
+]

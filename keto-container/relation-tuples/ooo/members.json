@@ -1,0 +1,8 @@
+[
+  {
+    "namespace": "Organization",
+    "object": "ooo",
+    "relation": "members",
+    "subject_id": "julius"
+  }
+]

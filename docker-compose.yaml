@@ -13,13 +13,13 @@ services:
         source: ./keto-container/namespaces.keto.ts
         target: /home/ory/namespaces.keto.ts
 
-  #keto-init:
-  #  image: oryd/keto:latest
-  #  environment:
-  #    - KETO_WRITE_REMOTE=keto:4467
-  #  volumes:
-  #    - type: bind
-  #      source: ./keto-container/relation-tuples/
-  #      target: /home/ory
-  #  command: relation-tuple create /home/ory/relation-tuples
-  #  restart: on-failure
+  keto-init:
+    image: oryd/keto:latest
+    environment:
+      - KETO_WRITE_REMOTE=keto:4467
+    volumes:
+      - type: bind
+        source: ./keto-container/relation-tuples/
+        target: /home/ory/relation-tuples/
+    command: relation-tuple create /home/ory/relation-tuples --insecure-disable-transport-security
+    restart: on-failure
