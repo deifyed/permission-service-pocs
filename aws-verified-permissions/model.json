@@ -1,0 +1,68 @@
+{
+  "schemas": {
+    "entityTypes": {
+      "User": {
+        "shape": {
+          "type": "Record",
+          "attributes": {
+            "id": {
+              "type": "String"
+            }
+          }
+        }
+      },
+      "Organization": {
+        "shape": {
+          "type": "Record",
+          "attributes": {
+            "id": {
+              "type": "String"
+            }
+          }
+        }
+      },
+      "Schema": {
+        "shape": {
+          "type": "Record",
+          "attributes": {
+            "id": {
+              "type": "String"
+            }
+          }
+        }
+      }
+    },
+    "actions": {
+      "ViewSchema": {
+        "appliesTo": {
+          "principalTypes": [
+            "User"
+          ],
+          "resourceTypes": [
+            "Schema"
+          ]
+        }
+      },
+      "EditSchema": {
+        "appliesTo": {
+          "principalTypes": [
+            "User"
+          ],
+          "resourceTypes": [
+            "Schema"
+          ]
+        }
+      },
+      "PublishSchema": {
+        "appliesTo": {
+          "principalTypes": [
+            "User"
+          ],
+          "resourceTypes": [
+            "Schema"
+          ]
+        }
+      }
+    }
+  }
+}
