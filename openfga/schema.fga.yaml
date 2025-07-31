@@ -1,0 +1,41 @@
+name: schemas
+model: |+
+    model
+      schema 1.1
+
+    type user
+
+    type organization
+      relations
+        define admin: [user]
+        define member: [user] or admin
+
+    type schema
+      relations
+        define editor: [user] or admin from owner
+        define owner: [organization]
+        define publisher: [user] or admin from owner
+        define viewer: [user] or member from owner
+
+tuples:
+    - user: organization:ooo
+      relation: owner
+      object: schema:50
+    - user: user:julius
+      relation: member
+      object: organization:ooo
+    - user: user:sjefen
+      relation: admin
+      object: organization:ooo
+tests:
+    - name: Tests
+      check:
+        - user: user:julius
+          object: schema:50
+          assertions:
+            editor: false
+            viewer: true
+        - user: user:sjefen
+          object: schema:50
+          assertions:
+            editor: true
