@@ -17,3 +17,5 @@ model"
 - Kult med [Concepts](https://openfga.dev/docs/concepts)
 - Veldig kult at alt kan skrives i playground, for så å eksportere alt (modeller, relasjoner OG tester) tror dog testene
   må uansett skrives i kode slik at man kan CI'e det, og da er man like langt som keto
+- Opplevde at endringer jeg gjorde i playground ikke kom med i `fga store export`. skummelt. fungerte fint å eksportere
+  fra playground og importere
