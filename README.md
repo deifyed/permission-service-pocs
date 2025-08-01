@@ -33,3 +33,4 @@ model"
 - + test bench (men klassisk AWS UX)
 - - JSON for schema (terraformresursen støtter ikke cedar schema format)
 - modelering av gruppetilhørlighet støttes ikke av cedar, [ref](https://docs.cedarpolicy.com/bestpractices/bp-implementing-roles-groups.html#assigning-a-user-to-a-role)
+- cedar + terraform + "ValidationException: Invalid input" == !@(#!@#!@#!@)
