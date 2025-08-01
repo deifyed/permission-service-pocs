@@ -2,40 +2,21 @@
   "schemas": {
     "entityTypes": {
       "User": {
-        "shape": {
-          "type": "Record",
-          "attributes": {
-            "id": {
-              "type": "String"
-            }
-          }
-        }
+        "memberOfTypes": ["Organization", "Group"]
       },
-      "Organization": {
-        "shape": {
-          "type": "Record",
-          "attributes": {
-            "id": {
-              "type": "String"
-            }
-          }
-        }
+      "Group": {
+        "memberOfTypes": ["Organization"]
       },
+      "Organization": {},
       "Schema": {
-        "shape": {
-          "type": "Record",
-          "attributes": {
-            "id": {
-              "type": "String"
-            }
-          }
-        }
+        "memberOfTypes": ["Organization"]
       }
     },
     "actions": {
       "ViewSchema": {
         "appliesTo": {
           "principalTypes": [
+            "Group",
             "User"
           ],
           "resourceTypes": [
@@ -46,6 +27,7 @@
       "EditSchema": {
         "appliesTo": {
           "principalTypes": [
+            "Group",
             "User"
           ],
           "resourceTypes": [
@@ -56,6 +38,7 @@
       "PublishSchema": {
         "appliesTo": {
           "principalTypes": [
+            "Group",
             "User"
           ],
           "resourceTypes": [
